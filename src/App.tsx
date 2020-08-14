@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { searchMovies } from './store/movies/actions';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App({ searchMovies: searchMoviesAction }: { searchMovies: (query: string, page: number) => void }) {
+  useEffect(() => searchMoviesAction('fight club', 1), [searchMoviesAction]);
   return (
     <div className="App">
       <header className="App-header">
@@ -23,4 +26,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = {
+  searchMovies
+}
+
+export default connect(null, mapDispatchToProps)(App);
