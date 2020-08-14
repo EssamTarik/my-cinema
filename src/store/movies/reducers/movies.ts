@@ -2,7 +2,7 @@ import { MOVIE_SEARCH_START, MOVIE_SEARCH_FAILURE, MOVIE_SEARCH_SUCCESS } from '
 import { IMoviesFetchState, MovieSearchAction } from '../models';
 
 
-const initialState: IMoviesFetchState = {
+export const initialState: IMoviesFetchState = {
   isFetched: false,
   isFetching: false,
 }
