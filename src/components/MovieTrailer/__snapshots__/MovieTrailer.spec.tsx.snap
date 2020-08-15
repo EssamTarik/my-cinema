@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieTrailer renders 1`] = `
+<DocumentFragment>
+  <div
+    class="movie-trailer"
+  >
+    <div />
+  </div>
+</DocumentFragment>
+`;

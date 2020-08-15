@@ -6,11 +6,6 @@ exports[`NavigationBar renders 1`] = `
     class="navigation-bar"
   >
     <div
-      class="navigation-bar__title"
-    >
-      <div />
-    </div>
-    <div
       class="navigation-bar__menu"
     >
       <button

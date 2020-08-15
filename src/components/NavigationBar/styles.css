@@ -8,12 +8,19 @@
   background-color: #161B2D;
 }
 
-.navigation-bar__title {
-  flex: 2;
-
+a.navigation-bar__title {
   text-align: center;
   color: white;
   font-size: 35px;
+  text-decoration: none;
+}
+a.navigation-bar__title:active {
+  outline: none;
+  border: none;
+}
+a.navigation-bar__title:hover {
+  color: white;
+  text-decoration: none;
 }
 .navigation-bar__menu {
   display: flex;
