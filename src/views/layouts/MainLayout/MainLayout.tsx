@@ -5,7 +5,9 @@ import './styles.css';
 const MainLayout = ({ children }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>) => (
   <div className='main-layout'>
     <NavigationBar />
-    {children}
+    <div className='main-layout__content'>
+      {children}
+    </div>
   </div>
 )
 
