@@ -16,7 +16,7 @@ describe('SearchPage', () => {
   afterEach(cleanup);
   it("renders", () => {
     const { asFragment } = render(
-      <SearchPage movieSearchState={mockMovieSearchResults} searchMovies={jest.fn()} />
+      <SearchPage resetMovieSearch={jest.fn()} movieSearchState={mockMovieSearchResults} searchMovies={jest.fn()} />
     );
     expect(asFragment()).toMatchSnapshot();
   });

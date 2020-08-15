@@ -14,6 +14,6 @@
   margin-top: 15px;
 }
 
-.movie-grid > div {
+.movie-grid > .movie-card {
   margin: 20px 20px;
 }

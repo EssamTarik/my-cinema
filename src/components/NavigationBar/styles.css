@@ -8,12 +8,19 @@
   background-color: #161B2D;
 }
 
-.navigation-bar__title {
-  flex: 2;
-
+a.navigation-bar__title {
   text-align: center;
   color: white;
   font-size: 35px;
+  text-decoration: none;
+}
+a.navigation-bar__title:active {
+  outline: none;
+  border: none;
+}
+a.navigation-bar__title:hover {
+  color: white;
+  text-decoration: none;
 }
 .navigation-bar__menu {
   display: flex;
@@ -28,7 +35,7 @@
   text-transform: capitalize;
 }
 .navigation-bar__menu__item:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .navigation-bar__menu__item--active {
   color: #00E285;

@@ -1,0 +1,7 @@
+.movie-trailer-modal__not-found {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 25px;
+}

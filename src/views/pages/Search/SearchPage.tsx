@@ -1,12 +1,18 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import debounce from 'lodash.debounce';
 import { SearchBar, Pagination } from '../../../components';
 import { MovieSearchResultsContainer } from '../../../containers';
 import { IProps } from './interfaces';
 import './styles.css';
 
-const SearchPage = ({ movieSearchState, searchMovies }: IProps) => {
+const SearchPage = ({ resetMovieSearch, movieSearchState, searchMovies }: IProps) => {
   const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    return () => {
+      resetMovieSearch();
+    }
+  }, [resetMovieSearch])
 
   const getMovies = useCallback((query: string, page: number) => {
     searchMovies(query, page);
@@ -15,7 +21,7 @@ const SearchPage = ({ movieSearchState, searchMovies }: IProps) => {
   const handleSearchTermChange = useCallback(debounce((text: string) => {
     setSearchTerm(text);
     getMovies(text, 1);
-  }, 700), [setSearchTerm, getMovies])
+  }, 500), [setSearchTerm, getMovies])
 
   const handlePageChange = useCallback((newPage: number) => {
     getMovies(searchTerm, newPage);

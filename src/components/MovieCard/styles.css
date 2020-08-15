@@ -4,6 +4,10 @@
   max-width: 160px;
 }
 
+.movie-card__content {
+  cursor: pointer;
+}
+
 .movie-card__action-btn {
   display: flex;
   align-items: center;

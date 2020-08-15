@@ -12,4 +12,5 @@
 }
 .main-layout__content {
   overflow: auto;
+  flex: 1;
 }
