@@ -85,5 +85,18 @@ describe('MovieCard', () => {
     fireEvent.click(watchLaterBtn!);
     expect(mockRemoveFromWatchLater).toHaveBeenCalled();
   })
+
+  it('renders placeholder if no poster', () => {
+    const { container } = render(
+      <MovieCard
+        movie={{ ...movieMock, poster_path: null }}
+        onRemoveFromWatchLater={jest.fn()}
+        onRemoveFromFavorites={jest.fn()}
+        onAddToWatchLater={jest.fn()}
+        onAddToFavorites={jest.fn()} />
+    );
+    const posterPlaceholder = container.querySelector('.movie-card__poster-missing');
+    expect(posterPlaceholder).not.toEqual(null);
+  })
 })
 
