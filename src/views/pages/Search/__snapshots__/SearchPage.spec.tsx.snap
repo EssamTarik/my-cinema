@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPage renders 1`] = `
+<DocumentFragment>
+  <div
+    class="search-page"
+  >
+    <div
+      class="search-page__search-bar-container"
+    >
+      <div
+        class="search-bar-container"
+      />
+    </div>
+    <div
+      class="search-page__search-results-container"
+    >
+      <div
+        class="movie-search-results"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

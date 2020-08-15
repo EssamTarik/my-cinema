@@ -1,0 +1,1 @@
+export { default as movieSearchReducer } from './movieSearch';

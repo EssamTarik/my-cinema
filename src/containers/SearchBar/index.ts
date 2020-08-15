@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { searchMovies } from '../../store/movies/actions';
+import { searchMovies } from '../../store/movieSearch/actions';
 import SearchBarContainer from './SearchBarContainer';
 
 const mapDispatchToProps = {

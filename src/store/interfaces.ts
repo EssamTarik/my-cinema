@@ -1,5 +1,5 @@
-import { IMoviesFetchState } from "./movies/models";
+import { IMoviesFetchState } from "./movieSearch/models";
 
 export interface IStateTree {
-  movies: IMoviesFetchState;
+  movieSearch: IMoviesFetchState;
 }

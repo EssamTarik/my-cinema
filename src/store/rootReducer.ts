@@ -1,10 +1,10 @@
 import { IStateTree } from './interfaces';
 import { Reducer, AnyAction, combineReducers } from 'redux';
-import { moviesReducer } from './movies/reducers';
+import { movieSearchReducer } from './movieSearch/reducers';
 
 type IRootReducer = Reducer<IStateTree, AnyAction>;
 const rootReducer: IRootReducer = combineReducers({
-  movies: moviesReducer
+  movieSearch: movieSearchReducer
 })
 
 export default rootReducer;

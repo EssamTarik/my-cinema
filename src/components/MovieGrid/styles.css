@@ -1,0 +1,11 @@
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-bottom: 20px;
+}
+
+.movie-grid > div {
+  margin: 20px 20px;
+}

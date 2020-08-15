@@ -1,4 +1,4 @@
-import moviesReducer, { initialState } from './movies';
+import moviesReducer, { initialState } from './movieSearch';
 import { IMovieSearchStartAction, IMovieSearchFailureAction, IMovieSearchSuccessAction } from '../models';
 import { MOVIE_SEARCH_START, MOVIE_SEARCH_FAILURE, MOVIE_SEARCH_SUCCESS } from '../types';
 
