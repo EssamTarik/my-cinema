@@ -27,5 +27,14 @@ describe('movies reducer', () => {
 
     const state = moviesReducer(initialState, action);
     expect(state).toEqual(expectedState);
-  })
+  });
+
+  it('returns default state', () => {
+    const expectedState = initialState;
+    const action = { type: 'WRONG_ACTION' };
+
+    const state = moviesReducer(initialState, action as any);
+    expect(state).toEqual(expectedState);
+  });
+
 })
