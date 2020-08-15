@@ -6,6 +6,9 @@ exports[`MainLayout renders 1`] = `
     class="main-layout"
   >
     <div />
+    <div
+      class="main-layout__content"
+    />
   </div>
 </DocumentFragment>
 `;

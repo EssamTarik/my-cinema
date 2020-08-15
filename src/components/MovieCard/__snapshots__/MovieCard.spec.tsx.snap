@@ -9,7 +9,7 @@ exports[`MovieCard renders 1`] = `
       class="movie-card__action-btn movie-card__fav-btn"
     >
       <svg
-        fill="currentColor"
+        fill="lightgrey"
         height="1em"
         stroke="currentColor"
         stroke-width="0"
