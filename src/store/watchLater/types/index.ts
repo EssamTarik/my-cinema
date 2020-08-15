@@ -1,0 +1,2 @@
+export const ADD_WATCH_LATER = 'WATCH_LATER/ADD';
+export const REMOVE_WATCH_LATER = 'WATCH_LATER/REMOVE';
