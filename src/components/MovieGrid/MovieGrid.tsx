@@ -4,7 +4,7 @@ import { IProps } from './interfaces';
 import './styles.css';
 import { FormattedMessage } from 'react-intl';
 
-const MovieGrid = ({ movies, favorites, onAddToFavorites, onRemoveFromFavorites }: IProps) => {
+const MovieGrid = ({ movies, favorites, watchLater, onAddToFavorites, onRemoveFromFavorites, onAddToWatchLater, onRemoveFromWatchLater }: IProps) => {
   if (movies.length === 0) {
     return <div className='movie-grid__no-results'><FormattedMessage id='movie.noResults' /></div>
   }
@@ -13,16 +13,17 @@ const MovieGrid = ({ movies, favorites, onAddToFavorites, onRemoveFromFavorites 
       {
         movies.map(movie => {
           const isFavorite = favorites[movie.id] !== undefined;
+          const isWatchLater = watchLater[movie.id] !== undefined;
           return (
             <MovieCard
               key={movie.id}
               movie={movie}
               favorite={isFavorite}
-              watchLater={true}
+              watchLater={isWatchLater}
               onAddToFavorites={() => onAddToFavorites(movie)}
-              onAddToWatchLater={console.log}
+              onAddToWatchLater={() => onAddToWatchLater(movie)}
               onRemoveFromFavorites={() => onRemoveFromFavorites(movie)}
-              onRemoveFromWatchLater={console.log}
+              onRemoveFromWatchLater={() => onRemoveFromWatchLater(movie)}
             />
           )
         })

@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 
 const moviePosterWidth = 185;
 const watchLaterFillColor = 'grey';
-const watchLaterActiveFillColor = 'yellow';
+const watchLaterActiveFillColor = 'orange';
 const starFillColor = 'lightgrey';
 const starActiveFillColor = 'yellow';
 
