@@ -9,7 +9,7 @@ exports[`SearchPage renders 1`] = `
       class="search-page__search-bar-container"
     >
       <div
-        class="search-bar-container"
+        class="search-bar"
       />
     </div>
     <div

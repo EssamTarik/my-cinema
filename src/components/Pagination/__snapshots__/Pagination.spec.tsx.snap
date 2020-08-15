@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination renders 1`] = `
+<DocumentFragment>
+  <div
+    class="pagination"
+  >
+    <div
+      class="pagination__prev-container"
+    >
+      <button
+        class="pagination__btn"
+        disabled=""
+      >
+        <div />
+      </button>
+    </div>
+    <div
+      class="pagination__next-container"
+    >
+      <button
+        class="pagination__btn"
+      >
+        <div />
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

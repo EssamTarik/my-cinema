@@ -1,4 +1,4 @@
-import { MOVIE_SEARCH_START, MOVIE_SEARCH_FAILURE, MOVIE_SEARCH_SUCCESS } from '../types';
+import { MOVIE_SEARCH_START, MOVIE_SEARCH_FAILURE, MOVIE_SEARCH_SUCCESS, MOVIE_SEARCH_RESET } from '../types';
 import { IMovieSearchResponse } from './IMovieSearchResponse';
 
 export interface IMovieSearchStartAction {
@@ -15,4 +15,8 @@ export interface IMovieSearchFailureAction {
   payload: string;
 }
 
-export type MovieSearchAction = IMovieSearchStartAction | IMovieSearchFailureAction | IMovieSearchSuccessAction
+export interface IMovieSearchResetAction {
+  type: typeof MOVIE_SEARCH_RESET;
+}
+
+export type MovieSearchAction = IMovieSearchStartAction | IMovieSearchFailureAction | IMovieSearchSuccessAction | IMovieSearchResetAction

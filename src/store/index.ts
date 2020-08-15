@@ -8,6 +8,7 @@ import rootReducer from "./rootReducer";
 
 const persistConfig = {
   key: "my-cinema",
+  whitelist: ['favorites'],
   storage,
 };
 
