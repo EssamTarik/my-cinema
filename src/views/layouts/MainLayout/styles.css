@@ -5,6 +5,8 @@
   flex-direction: column;
   position: fixed;
 
+  overflow: hidden;
+
   height: 100%;
   width: 100%;
 
@@ -13,11 +15,4 @@
 .main-layout__content {
   overflow: auto;
   flex: 1;
-}
-
-
-@media only screen and (max-width: 600px) {
-  .main-layout {
-    padding-bottom: 30px;
-  }
 }
