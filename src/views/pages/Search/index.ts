@@ -1,1 +1,10 @@
-export { default } from './SearchPage';
+import { connect } from 'react-redux';
+import SearchPage from './SearchPage';
+import { searchMovies } from '../../../store/movieSearch/actions';
+import { IStateTree } from '../../../store/interfaces';
+
+const mapStateToProps = ({ movieSearch }: IStateTree) => ({ movieSearchState: movieSearch })
+const mapDispatchToProps = {
+  searchMovies
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
