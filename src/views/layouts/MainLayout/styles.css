@@ -5,12 +5,19 @@
   flex-direction: column;
   position: fixed;
 
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 
   background-color: #0A1016;
 }
 .main-layout__content {
   overflow: auto;
   flex: 1;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .main-layout {
+    padding-bottom: 30px;
+  }
 }

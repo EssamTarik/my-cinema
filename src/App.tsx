@@ -6,7 +6,7 @@ import { SearchPage, FavoritesPage, WatchLaterPage } from './views/pages';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/my-cinema'>
       <MainLayout>
         <Route exact path='/' component={SearchPage} />
         <Route exact path='/favorites' component={FavoritesPage} />
