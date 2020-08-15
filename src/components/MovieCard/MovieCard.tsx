@@ -9,7 +9,8 @@ import { FormattedMessage } from 'react-intl';
 const moviePosterWidth = 185;
 const watchLaterFillColor = 'grey';
 const watchLaterActiveFillColor = 'yellow';
-const starFillColor = 'yellow';
+const starFillColor = 'lightgrey';
+const starActiveFillColor = 'yellow';
 
 
 const MovieCard = ({ movie, favorite = false, watchLater = false, onAddToFavorites, onAddToWatchLater, onRemoveFromFavorites, onRemoveFromWatchLater }: IProps) => {
@@ -18,7 +19,7 @@ const MovieCard = ({ movie, favorite = false, watchLater = false, onAddToFavorit
   return (
     <div className='movie-card'>
       <button onClick={favorite ? onRemoveFromFavorites : onAddToFavorites} className='movie-card__action-btn movie-card__fav-btn'>
-        {favorite ? <AiFillStar fill={starFillColor} /> : <AiOutlineStar />}
+        {favorite ? <AiFillStar fill={starActiveFillColor} /> : <AiOutlineStar fill={starFillColor} />}
       </button>
 
       <button onClick={watchLater ? onRemoveFromWatchLater : onAddToWatchLater} className='movie-card__action-btn movie-card__watch-later-btn'>

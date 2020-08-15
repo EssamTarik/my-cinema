@@ -10,7 +10,7 @@ describe('MovieGrid', () => {
   afterEach(cleanup);
   it("renders", () => {
     const { asFragment } = render(
-      <MovieGrid movies={[movieMock]} />
+      <MovieGrid favorites={{}} onAddToFavorites={jest.fn()} onRemoveFromFavorites={jest.fn()} movies={[movieMock]} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
