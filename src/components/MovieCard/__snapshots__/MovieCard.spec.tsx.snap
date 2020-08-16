@@ -45,7 +45,7 @@ exports[`MovieCard renders 1`] = `
       <img
         alt="Fight Club"
         class="movie-card__poster"
-        src="http://image.tmdb.org/t/p/w185/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
+        src="https://image.tmdb.org/t/p/w185/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg"
       />
     </div>
     <div

@@ -1,6 +1,6 @@
 import moviesReducer, { initialState } from './movieSearch';
 import { IMovieSearchStartAction, IMovieSearchFailureAction, IMovieSearchSuccessAction } from '../models';
-import { MOVIE_SEARCH_START, MOVIE_SEARCH_FAILURE, MOVIE_SEARCH_SUCCESS } from '../types';
+import { MOVIE_SEARCH_START, MOVIE_SEARCH_FAILURE, MOVIE_SEARCH_SUCCESS, MOVIE_SEARCH_RESET } from '../types';
 
 describe('movies reducer', () => {
   it('returns search start state', () => {
@@ -36,5 +36,13 @@ describe('movies reducer', () => {
     const state = moviesReducer(initialState, action as any);
     expect(state).toEqual(expectedState);
   });
+
+  it('resets', () => {
+    const expectedState = initialState;
+    const action = { type: MOVIE_SEARCH_RESET };
+
+    const state = moviesReducer(initialState, action as any);
+    expect(state).toEqual(expectedState);
+  })
 
 })

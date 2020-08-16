@@ -1,8 +1,8 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import MovieCard from '../MovieCard';
 import { IProps } from './interfaces';
 import './styles.css';
-import { FormattedMessage } from 'react-intl';
 
 const MovieGrid = ({ movies, favorites, watchLater, onAddToFavorites, onRemoveFromFavorites, onAddToWatchLater, onRemoveFromWatchLater }: IProps) => {
   if (movies.length === 0) {

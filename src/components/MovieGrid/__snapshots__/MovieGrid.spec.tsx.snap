@@ -5,7 +5,9 @@ exports[`MovieGrid renders 1`] = `
   <div
     class="movie-grid"
   >
-    <div />
+    <div
+      class="card"
+    />
   </div>
 </DocumentFragment>
 `;

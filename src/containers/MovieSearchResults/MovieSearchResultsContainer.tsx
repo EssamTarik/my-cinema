@@ -8,7 +8,7 @@ const MovieSearchResultsContainer = ({ movieSearchState }: IProps) => {
     return null;
   }
   if (error) {
-    return <div>{error}</div>;
+    return <div className='movie-search__error'>{error}</div>;
   }
 
   const { results: movies } = data;
