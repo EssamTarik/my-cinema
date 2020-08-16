@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { routerBaseName } from './config';
 import { MainLayout } from './views/layouts';
 import { SearchPage, FavoritesPage, WatchLaterPage } from './views/pages';
-import './App.css';
 
 function App() {
   return (
