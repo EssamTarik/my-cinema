@@ -1,5 +1,6 @@
 import React from "react";
 import { render, cleanup, fireEvent } from "@testing-library/react";
+import { IProps as MovieTrailerModalContainerProps } from '../../containers/MovieTrailerModal/interfaces';
 
 import MovieCard from "./MovieCard";
 
@@ -8,7 +9,11 @@ jest.mock("react-intl", () => ({
   FormattedMessage: () => <div />,
 }));
 jest.mock("../../containers", () => ({
-  MovieTrailerModalContainer: () => <div className="modal" />,
+  MovieTrailerModalContainer: ({ onRequestClose }: MovieTrailerModalContainerProps) => (
+    <div className="modal">
+      <button onClick={onRequestClose} className='close-modal'></button>
+    </div>
+  ),
 }));
 
 const movieMock = jest.requireMock("movie");
@@ -118,7 +123,7 @@ describe("MovieCard", () => {
     expect(posterPlaceholder).not.toEqual(null);
   });
 
-  it("opens trailer modal", () => {
+  it("opens and closes trailer modal", () => {
     const { container } = render(
       <MovieCard
         movie={{ ...movieMock, poster_path: null }}
@@ -131,7 +136,13 @@ describe("MovieCard", () => {
     const movieCardContent = container.querySelector(".movie-card__content");
     fireEvent.click(movieCardContent!);
 
-    const modal = container.querySelector(".modal");
+    let modal = container.querySelector(".modal");
     expect(modal).not.toEqual(null);
+
+    const modalCloseBtn = container.querySelector('.close-modal');
+    fireEvent.click(modalCloseBtn!)
+
+    modal = container.querySelector(".modal");
+    expect(modal).toEqual(null);
   });
 });

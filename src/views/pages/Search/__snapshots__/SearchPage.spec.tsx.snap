@@ -10,7 +10,11 @@ exports[`SearchPage renders 1`] = `
     >
       <div
         class="search-bar"
-      />
+      >
+        <input
+          class="search-bar__input"
+        />
+      </div>
     </div>
     <div
       class="search-page__search-results-container"
