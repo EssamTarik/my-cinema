@@ -1,5 +1,5 @@
-jest.mock('react-intl', () => ({ FormattedMessage: () => <div /> }));
-jest.mock('react-router-dom');
+jest.mock('react-intl', () => ({ useIntl: () => ({ formatMessage: () => '' }), FormattedMessage: () => <div /> }));
+jest.mock('react-router-dom', () => ({ NavLink: () => <div />, Link: () => <div />, useLocation: () => ({ pathname: '' }) }));
 import React from "react";
 import { render, cleanup, fireEvent } from "@testing-library/react";
 

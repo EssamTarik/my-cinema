@@ -1,38 +1,28 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import debounce from 'lodash.debounce';
 import { SearchBar, Pagination } from '../../../components';
 import { MovieSearchResultsContainer } from '../../../containers';
 import { IProps } from './interfaces';
 import './styles.css';
 
-const SearchPage = ({ resetMovieSearch, movieSearchState, searchMovies }: IProps) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchPage = ({ searchText, setSearchText, movieSearchState, searchMovies }: IProps) => {
+  const searchMoviesDebounced = useCallback(debounce(searchMovies, 700), [searchMovies]);
 
-  useEffect(() => {
-    return () => {
-      resetMovieSearch();
-    }
-  }, [resetMovieSearch])
-
-  const getMovies = useCallback((query: string, page: number) => {
-    searchMovies(query, page);
-  }, [searchMovies])
-
-  const handleSearchTermChange = useCallback(debounce((text: string) => {
-    setSearchTerm(text);
-    getMovies(text, 1);
-  }, 500), [setSearchTerm, getMovies])
+  const handleSearchTextChange = useCallback((text: string) => {
+    setSearchText(text);
+    searchMoviesDebounced(text, 1);
+  }, [setSearchText, searchMoviesDebounced])
 
   const handlePageChange = useCallback((newPage: number) => {
-    getMovies(searchTerm, newPage);
-  }, [searchTerm, getMovies])
+    searchMovies(searchText, newPage);
+  }, [searchText, searchMovies])
 
   const { data: results } = movieSearchState;
 
   return (
     <div className='search-page'>
       <div className='search-page__search-bar-container'>
-        <SearchBar onChange={handleSearchTermChange} />
+        <SearchBar value={searchText} onChange={handleSearchTextChange} />
       </div>
       <div className='search-page__search-results-container'>
         <MovieSearchResultsContainer />

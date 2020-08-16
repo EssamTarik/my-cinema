@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { MdWatchLater } from 'react-icons/md';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { MovieTrailerModalContainer } from '../../containers';
 import { getTMDBImageURL } from '../../util';
 import { IProps } from './interfaces';
@@ -17,15 +17,24 @@ const starActiveFillColor = 'yellow';
 const MovieCard = ({ movie, favorite = false, watchLater = false, onAddToFavorites, onAddToWatchLater, onRemoveFromFavorites, onRemoveFromWatchLater }: IProps) => {
   const [trailerModalOpen, setModalTrailerOpen] = useState(false);
   const { poster_path: posterPath, original_title: originalTitle } = movie;
+  const intl = useIntl()
 
   return (
     <>
       <div className='movie-card'>
-        <button onClick={favorite ? onRemoveFromFavorites : onAddToFavorites} className='movie-card__action-btn movie-card__fav-btn'>
+        <button
+          title={intl.formatMessage({ id: `movie.${favorite ? 'removeFromFavorites' : 'addToFavorites'}` })}
+          onClick={favorite ? onRemoveFromFavorites : onAddToFavorites}
+          className='movie-card__action-btn movie-card__fav-btn'
+        >
           {favorite ? <AiFillStar fill={starActiveFillColor} /> : <AiOutlineStar fill={starFillColor} />}
         </button>
 
-        <button onClick={watchLater ? onRemoveFromWatchLater : onAddToWatchLater} className='movie-card__action-btn movie-card__watch-later-btn'>
+        <button
+          title={intl.formatMessage({ id: `movie.${watchLater ? 'removeFromWatchLater' : 'addToWatchLater'}` })}
+          onClick={watchLater ? onRemoveFromWatchLater : onAddToWatchLater}
+          className='movie-card__action-btn movie-card__watch-later-btn'
+        >
           {watchLater ? <MdWatchLater fill={watchLaterActiveFillColor} /> : <MdWatchLater fill={watchLaterFillColor} />}
         </button>
         <div onClick={() => setModalTrailerOpen(true)} className='movie-card__content'>

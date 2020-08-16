@@ -1,4 +1,4 @@
-jest.mock('react-intl', () => ({ FormattedMessage: () => <div /> }));
+jest.mock('react-intl', () => ({ useIntl: () => ({ formatMessage: () => '' }), FormattedMessage: () => <div /> }));
 jest.mock('../../containers', () => ({ MovieTrailerModalContainer: () => <div className='modal' /> }))
 import React from "react";
 import { render, cleanup, fireEvent } from "@testing-library/react";
