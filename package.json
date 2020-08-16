@@ -1,5 +1,6 @@
 {
   "name": "my-cinema",
+  "homepage": "https://essamtarik.github.io/my-cinema",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

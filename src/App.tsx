@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+import { routerBaseName } from './config';
 import { MainLayout } from './views/layouts';
 import { SearchPage, FavoritesPage, WatchLaterPage } from './views/pages';
+import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename={routerBaseName}>
       <MainLayout>
         <Route exact path='/' component={SearchPage} />
         <Route exact path='/favorites' component={FavoritesPage} />
