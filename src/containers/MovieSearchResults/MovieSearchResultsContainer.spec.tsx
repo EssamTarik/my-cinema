@@ -47,5 +47,15 @@ describe('MovieSearchResultsContainer', () => {
     const resultGrid = container.querySelector('.movie-grid');
     expect(resultGrid).not.toEqual(null)
   })
+
+  it('returns error in case of error', () => {
+    const errorMessage = 'Failed to fetch';
+    const { container } = render(
+      <MovieSearchResultsContainer movieSearchState={{ isFetched: true, isFetching: false, error: errorMessage, data: movieSearchResultsMock }} />
+    );
+
+    const errorDiv = container.querySelector('.movie-search__error');
+    expect(errorDiv).not.toEqual(null)
+  })
 })
 

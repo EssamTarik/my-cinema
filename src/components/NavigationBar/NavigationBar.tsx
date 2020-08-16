@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import cn from 'classnames';
+import { FormattedMessage } from 'react-intl';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import './styles.css';
-import { FormattedMessage } from 'react-intl';
 
 const NavigationBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

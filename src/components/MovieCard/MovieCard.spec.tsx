@@ -1,4 +1,5 @@
 jest.mock('react-intl', () => ({ FormattedMessage: () => <div /> }));
+jest.mock('../../containers', () => ({ MovieTrailerModalContainer: () => <div className='modal' /> }))
 import React from "react";
 import { render, cleanup, fireEvent } from "@testing-library/react";
 
@@ -97,6 +98,22 @@ describe('MovieCard', () => {
     );
     const posterPlaceholder = container.querySelector('.movie-card__poster-missing');
     expect(posterPlaceholder).not.toEqual(null);
+  })
+
+  it('opens trailer modal', () => {
+    const { container } = render(
+      <MovieCard
+        movie={{ ...movieMock, poster_path: null }}
+        onRemoveFromWatchLater={jest.fn()}
+        onRemoveFromFavorites={jest.fn()}
+        onAddToWatchLater={jest.fn()}
+        onAddToFavorites={jest.fn()} />
+    );
+    const movieCardContent = container.querySelector('.movie-card__content');
+    fireEvent.click(movieCardContent!);
+
+    const modal = container.querySelector('.modal');
+    expect(modal).not.toEqual(null);
   })
 })
 

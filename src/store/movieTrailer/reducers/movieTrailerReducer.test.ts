@@ -37,4 +37,12 @@ describe('movie trailer reducer', () => {
     expect(state).toEqual(expectedState);
   });
 
+  it('resets', () => {
+    const expectedState = initialState;
+    const action = { type: MOVIE_TRAILER_FETCH_RESET };
+
+    const state = movieTrailerReducer(initialState, action as any);
+    expect(state).toEqual(expectedState);
+  })
+
 })

@@ -1,4 +1,4 @@
-jest.mock('../MovieCard', () => () => <div />)
+jest.mock('../MovieCard', () => () => <div className='card' />)
 jest.mock('react-intl', () => ({ FormattedMessage: () => <div /> }));
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
@@ -10,9 +10,11 @@ import MovieGrid from "./MovieGrid";
 describe('MovieGrid', () => {
   afterEach(cleanup);
   it("renders", () => {
-    const { asFragment } = render(
+    const { asFragment, container } = render(
       <MovieGrid watchLater={{}} favorites={{}} onAddToWatchLater={jest.fn()} onRemoveFromWatchLater={jest.fn()} onAddToFavorites={jest.fn()} onRemoveFromFavorites={jest.fn()} movies={[movieMock]} />
     );
+    const cards = container.querySelectorAll('.card');
+    expect(cards.length).toEqual(1);
     expect(asFragment()).toMatchSnapshot();
   });
 
