@@ -7,7 +7,20 @@ exports[`MovieGrid renders 1`] = `
   >
     <div
       class="card"
-    />
+    >
+      <div
+        class="add-to-watch-later"
+      />
+      <div
+        class="remove-from-watch-later"
+      />
+      <div
+        class="add-to-favorites"
+      />
+      <div
+        class="remove-from-favorites"
+      />
+    </div>
   </div>
 </DocumentFragment>
 `;

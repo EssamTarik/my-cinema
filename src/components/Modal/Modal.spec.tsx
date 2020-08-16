@@ -26,4 +26,17 @@ describe("Modal", () => {
     fireEvent.click(modal!);
     expect(mockClose).toHaveBeenCalled();
   });
+
+  it("does not close the modal on content clicks", () => {
+    const mockClose = jest.fn();
+
+    const { container } = render(
+      <Modal onRequestClose={mockClose}>
+        <div />
+      </Modal>
+    );
+    const modalContent = container.querySelector(".modal__content");
+    fireEvent.click(modalContent!);
+    expect(mockClose).not.toHaveBeenCalled();
+  });
 });
