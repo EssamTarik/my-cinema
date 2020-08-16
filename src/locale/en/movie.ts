@@ -1,4 +1,8 @@
 export default {
-  'movie.posterMissing': 'No preview available',
-  'movie.noResults': 'No movies here'
+  'movie.posterMissing': 'no preview available',
+  'movie.noResults': 'no movies here',
+  'movie.addToFavorites': 'Add to favorites',
+  'movie.addToWatchLater': 'Add to watch later',
+  'movie.removeFromFavorites': 'Remove from favorites',
+  'movie.removeFromWatchLater': 'Remove from watch later'
 }

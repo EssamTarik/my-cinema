@@ -8,4 +8,5 @@ export interface IStateTree {
   favorites: IFavorites;
   watchLater: IWatchLater;
   trailer: IMovieTrailerFetchState;
+  searchText: string;
 }

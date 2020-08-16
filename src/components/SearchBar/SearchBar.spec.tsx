@@ -10,7 +10,7 @@ describe('SearchBar', () => {
 
   it("renders", () => {
     const { asFragment } = render(
-      <SearchBar onChange={mockOnChange} />
+      <SearchBar value='' onChange={mockOnChange} />
     );
     expect(asFragment()).toMatchSnapshot();
   });
@@ -18,12 +18,22 @@ describe('SearchBar', () => {
   it("Calls on change", () => {
     const value = 'test'
     const { container } = render(
-      <SearchBar onChange={mockOnChange} />
+      <SearchBar value='' onChange={mockOnChange} />
     );
 
     const input = container.querySelector('input');
     fireEvent.change(input!, { target: { value } })
     expect(mockOnChange).toHaveBeenCalledWith(value)
   });
+
+  it('displays passed value', () => {
+    const value = 'val';
+    const { container } = render(
+      <SearchBar value={value} onChange={mockOnChange} />
+    );
+
+    const input = container.querySelector('input');
+    expect(input).toHaveValue(value);
+  })
 })
 

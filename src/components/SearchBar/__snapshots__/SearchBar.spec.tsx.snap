@@ -6,6 +6,7 @@ exports[`SearchBar renders 1`] = `
     class="form-control"
     placeholder=""
     type="text"
+    value=""
   />
 </DocumentFragment>
 `;

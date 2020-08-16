@@ -11,7 +11,7 @@
 a.navigation-bar__title {
   text-align: center;
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   text-decoration: none;
 }
 a.navigation-bar__title:active {
@@ -30,7 +30,7 @@ a.navigation-bar__title:hover {
   margin-top: 5px;
 }
 .navigation-bar__menu__item {
-  color: white;
+  color: #E6E6E6;
   font-size: 20px;
   text-transform: capitalize;
 }
