@@ -14,6 +14,7 @@ exports[`NavigationBar renders 1`] = `
       <div />
       <button
         class="navigation-bar__menu-close-btn"
+        type="button"
       >
         <svg
           color="white"
@@ -34,6 +35,7 @@ exports[`NavigationBar renders 1`] = `
     </div>
     <button
       class="navigation-bar__menu-btn"
+      type="button"
     >
       <svg
         color="white"

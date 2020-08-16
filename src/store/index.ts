@@ -8,12 +8,15 @@ import rootReducer from "./rootReducer";
 
 const persistConfig = {
   key: "my-cinema",
-  whitelist: ['favorites', 'watchLater'],
+  whitelist: ["favorites", "watchLater"],
   storage,
 };
 
 const middleware: Middleware[] = [thunk];
 
 export const persistedReducer = persistReducer(persistConfig, rootReducer);
-export const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(...middleware)));
+export const store = createStore(
+  persistedReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 export const persistor = persistStore(store);

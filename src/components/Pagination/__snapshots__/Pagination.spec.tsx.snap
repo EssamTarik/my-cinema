@@ -11,6 +11,7 @@ exports[`Pagination renders 1`] = `
       <button
         class="pagination__btn"
         disabled=""
+        type="button"
       >
         <div />
       </button>
@@ -20,6 +21,7 @@ exports[`Pagination renders 1`] = `
     >
       <button
         class="pagination__btn"
+        type="button"
       >
         <div />
       </button>

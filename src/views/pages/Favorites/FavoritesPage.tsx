@@ -1,6 +1,6 @@
-import React from 'react';
-import { FavoriteMoviesContainer } from '../../../containers';
+import React from "react";
+import { FavoriteMoviesContainer } from "../../../containers";
 
-const FavoritesPage = () => <FavoriteMoviesContainer />
+const FavoritesPage = () => <FavoriteMoviesContainer />;
 
 export default FavoritesPage;

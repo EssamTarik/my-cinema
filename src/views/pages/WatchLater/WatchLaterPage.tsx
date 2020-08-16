@@ -1,6 +1,6 @@
-import React from 'react';
-import { WatchLaterMoviesContainer } from '../../../containers';
+import React from "react";
+import { WatchLaterMoviesContainer } from "../../../containers";
 
-const WatchLaterPage = () => <WatchLaterMoviesContainer />
+const WatchLaterPage = () => <WatchLaterMoviesContainer />;
 
 export default WatchLaterPage;

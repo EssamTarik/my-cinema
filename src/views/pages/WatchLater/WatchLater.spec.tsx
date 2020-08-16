@@ -1,13 +1,16 @@
-jest.mock('../../../containers', () => ({ WatchLaterMoviesContainer: () => <div /> }))
-import React from 'react';
-import WatchLaterPage from './WatchLaterPage';
-import { render, cleanup } from '@testing-library/react';
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import WatchLaterPage from "./WatchLaterPage";
 
-describe('WatchLaterPage', () => {
+jest.mock("../../../containers", () => ({
+  WatchLaterMoviesContainer: () => <div />,
+}));
+
+describe("WatchLaterPage", () => {
   afterEach(cleanup);
 
-  it('renders', () => {
+  it("renders", () => {
     const { asFragment } = render(<WatchLaterPage />);
-    expect(asFragment()).toMatchSnapshot()
-  })
-})
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

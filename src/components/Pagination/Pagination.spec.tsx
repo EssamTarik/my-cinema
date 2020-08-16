@@ -1,10 +1,11 @@
-jest.mock('react-intl', () => ({ FormattedMessage: () => <div /> }));
 import React from "react";
 import { render, cleanup, fireEvent } from "@testing-library/react";
 
 import Pagination from "./Pagination";
 
-describe('Pagination', () => {
+jest.mock("react-intl", () => ({ FormattedMessage: () => <div /> }));
+
+describe("Pagination", () => {
   afterEach(cleanup);
   it("renders", () => {
     const { asFragment } = render(
@@ -18,7 +19,7 @@ describe('Pagination', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('disables next button on last page', () => {
+  it("disables next button on last page", () => {
     const { container } = render(
       <Pagination
         page={10}
@@ -27,11 +28,13 @@ describe('Pagination', () => {
         onPreviousClick={jest.fn()}
       />
     );
-    const nextBtn = container.querySelector('.pagination__next-container button');
-    expect(nextBtn!).toBeDisabled()
-  })
+    const nextBtn = container.querySelector(
+      ".pagination__next-container button"
+    );
+    expect(nextBtn!).toBeDisabled();
+  });
 
-  it('disables previous button on first page', () => {
+  it("disables previous button on first page", () => {
     const { container } = render(
       <Pagination
         page={1}
@@ -40,13 +43,15 @@ describe('Pagination', () => {
         onPreviousClick={jest.fn()}
       />
     );
-    const previousBtn = container.querySelector('.pagination__prev-container button');
-    expect(previousBtn!).toBeDisabled()
-  })
+    const previousBtn = container.querySelector(
+      ".pagination__prev-container button"
+    );
+    expect(previousBtn!).toBeDisabled();
+  });
 
-  it('calls next/previous page callback', () => {
-    const mockNextClick = jest.fn()
-    const mockPreviousClick = jest.fn()
+  it("calls next/previous page callback", () => {
+    const mockNextClick = jest.fn();
+    const mockPreviousClick = jest.fn();
     const { container } = render(
       <Pagination
         page={2}
@@ -56,13 +61,16 @@ describe('Pagination', () => {
       />
     );
 
-    const previousBtn = container.querySelector('.pagination__prev-container button');
-    const nextBtn = container.querySelector('.pagination__next-container button');
+    const previousBtn = container.querySelector(
+      ".pagination__prev-container button"
+    );
+    const nextBtn = container.querySelector(
+      ".pagination__next-container button"
+    );
     fireEvent.click(previousBtn!);
     fireEvent.click(nextBtn!);
 
     expect(mockNextClick).toHaveBeenCalledTimes(1);
     expect(mockPreviousClick).toHaveBeenCalledTimes(1);
-  })
-})
-
+  });
+});
