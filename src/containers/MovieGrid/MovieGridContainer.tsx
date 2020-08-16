@@ -1,8 +1,16 @@
-import React from 'react';
-import { IProps } from './interfaces';
-import { MovieGrid } from '../../components';
+import React from "react";
+import { IProps } from "./interfaces";
+import { MovieGrid } from "../../components";
 
-const MovieGridContainer = ({ movies, favorites, watchLater, addFavorite, removeFavorite, addWatchLater, removeWatchLater }: IProps) => (
+const MovieGridContainer = ({
+  movies,
+  favorites,
+  watchLater,
+  addFavorite,
+  removeFavorite,
+  addWatchLater,
+  removeWatchLater,
+}: IProps) => (
   <MovieGrid
     movies={movies}
     favorites={favorites}

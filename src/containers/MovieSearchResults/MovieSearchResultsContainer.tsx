@@ -1,6 +1,6 @@
-import React from 'react';
-import MovieGridContainer from '../MovieGrid';
-import { IProps } from './interfaces';
+import React from "react";
+import MovieGridContainer from "../MovieGrid";
+import { IProps } from "./interfaces";
 
 const MovieSearchResultsContainer = ({ movieSearchState }: IProps) => {
   const { isFetching, isFetched, data, error } = movieSearchState;
@@ -8,11 +8,11 @@ const MovieSearchResultsContainer = ({ movieSearchState }: IProps) => {
     return null;
   }
   if (error) {
-    return <div className='movie-search__error'>{error}</div>;
+    return <div className="movie-search__error">{error}</div>;
   }
 
   const { results: movies } = data;
-  return <MovieGridContainer movies={movies} />
-}
+  return <MovieGridContainer movies={movies} />;
+};
 
 export default MovieSearchResultsContainer;

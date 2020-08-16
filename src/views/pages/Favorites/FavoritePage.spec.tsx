@@ -1,13 +1,16 @@
-jest.mock('../../../containers', () => ({ FavoriteMoviesContainer: () => <div /> }))
-import React from 'react';
-import FavoritesPage from './FavoritesPage';
-import { render, cleanup } from '@testing-library/react';
+import React from "react";
+import { render, cleanup } from "@testing-library/react";
+import FavoritesPage from "./FavoritesPage";
 
-describe('FavoritesPage', () => {
+jest.mock("../../../containers", () => ({
+  FavoriteMoviesContainer: () => <div />,
+}));
+
+describe("FavoritesPage", () => {
   afterEach(cleanup);
 
-  it('renders', () => {
+  it("renders", () => {
     const { asFragment } = render(<FavoritesPage />);
-    expect(asFragment()).toMatchSnapshot()
-  })
-})
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

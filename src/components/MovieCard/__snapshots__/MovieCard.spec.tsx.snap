@@ -8,6 +8,7 @@ exports[`MovieCard renders 1`] = `
     <button
       class="movie-card__action-btn movie-card__fav-btn"
       title=""
+      type="button"
     >
       <svg
         fill="lightgrey"
@@ -26,6 +27,7 @@ exports[`MovieCard renders 1`] = `
     <button
       class="movie-card__action-btn movie-card__watch-later-btn"
       title=""
+      type="button"
     >
       <svg
         fill="grey"

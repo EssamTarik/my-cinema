@@ -1,2 +1,2 @@
-export * from './tmdb';
-export * from './app';
+export * from "./tmdb";
+export * from "./app";
