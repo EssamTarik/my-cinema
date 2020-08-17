@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar renders 1`] = `
+<DocumentFragment>
+  <input
+    class="form-control"
+    placeholder=""
+    type="text"
+    value=""
+  />
+</DocumentFragment>
+`;

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieGrid renders 1`] = `
+<DocumentFragment>
+  <div
+    class="movie-grid"
+  >
+    <div
+      class="card"
+    >
+      <div
+        class="add-to-watch-later"
+      />
+      <div
+        class="remove-from-watch-later"
+      />
+      <div
+        class="add-to-favorites"
+      />
+      <div
+        class="remove-from-favorites"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
